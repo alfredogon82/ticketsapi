@@ -41,6 +41,10 @@ $app->get('/users', function (Request $request, Response $response, $args) {
 
         return $response->withHeader('Content-Type', 'application/json')->withStatus(401);
     
+    } else {
+        // Error 500 ya que seria un error en servidor. No deberia de Pasar
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
+        
     }
     
 });
@@ -70,6 +74,10 @@ $app->get('/user/{id_user}', function (Request $request, Response $response, $ar
 
         return $response->withHeader('Content-Type', 'application/json')->withStatus(401);
     
+    } else {
+        // Error 500 ya que seria un error en servidor. No deberia de Pasar
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
+        
     }
 
 });
@@ -101,6 +109,10 @@ $app->post('/deactivate/user', function (Request $request, Response $response, $
 
         return $response->withHeader('Content-Type', 'application/json')->withStatus(401);
     
+    } else {
+        // Error 500 ya que seria un error en servidor. No deberia de Pasar
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
+        
     }
 });
 
@@ -132,6 +144,10 @@ $app->post('/activate/user', function (Request $request, Response $response, $ar
 
         return $response->withHeader('Content-Type', 'application/json')->withStatus(401);
     
+    } else {
+        // Error 500 ya que seria un error en servidor. No deberia de Pasar
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
+        
     }
 
 });
@@ -157,6 +173,10 @@ $app->post('/create/user', function (Request $request, Response $response, $args
         return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
     } else {
         return $response->withHeader('Content-Type', 'application/json')->withStatus(401);
+    } else {
+        // Error 500 ya que seria un error en servidor. No deberia de Pasar
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
+        
     }
   
 });
@@ -178,6 +198,10 @@ $app->post('/login', function (Request $request, Response $response, $args) {
         return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
     } else {
         return $response->withHeader('Content-Type', 'application/json')->withStatus(401);
+    } else {
+        // Error 500 ya que seria un error en servidor. No deberia de Pasar
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
+        
     }
     
 });
@@ -218,6 +242,10 @@ $app->put('/update/user', function (Request $request, Response $response, $args)
 
         return $response->withHeader('Content-Type', 'application/json')->withStatus(401);
     
+    } else {
+        // Error 500 ya que seria un error en servidor. No deberia de Pasar
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
+        
     }
   
 });
@@ -250,6 +278,10 @@ $app->get('/tickets', function (Request $request, Response $response, $args) {
 
         return $response->withHeader('Content-Type', 'application/json')->withStatus(401);
 
+    } else {
+        // Error 500 ya que seria un error en servidor. No deberia de Pasar
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
+        
     }
 
 });
@@ -280,6 +312,10 @@ $app->get('/ticket/{id_ticket}', function (Request $request, Response $response,
 
         return $response->withHeader('Content-Type', 'application/json')->withStatus(401);
     
+    } else {
+        // Error 500 ya que seria un error en servidor. No deberia de Pasar
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
+        
     }
 
 });
@@ -304,6 +340,10 @@ $app->post('/ticket/create', function (Request $request, Response $response, $ar
         return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
     } else {
         return $response->withHeader('Content-Type', 'application/json')->withStatus(401);
+    } else {
+        // Error 500 ya que seria un error en servidor. No deberia de Pasar
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
+        
     }
   
 });
@@ -343,6 +383,10 @@ $app->put('/update/ticket', function (Request $request, Response $response, $arg
 
         return $response->withHeader('Content-Type', 'application/json')->withStatus(401);
     
+    } else {
+        // Error 500 ya que seria un error en servidor. No deberia de Pasar
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
+        
     }
   
 });
@@ -377,6 +421,10 @@ $app->post('/activate/ticket', function (Request $request, Response $response, $
 
         return $response->withHeader('Content-Type', 'application/json')->withStatus(401);
     
+    } else {
+        // Error 500 ya que seria un error en servidor. No deberia de Pasar
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
+        
     }
 
 });
@@ -408,6 +456,10 @@ $app->post('/deactivate/ticket', function (Request $request, Response $response,
 
         return $response->withHeader('Content-Type', 'application/json')->withStatus(401);
     
+    } else {
+        // Error 500 ya que seria un error en servidor. No deberia de Pasar
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
+        
     }
 
 });
@@ -441,6 +493,10 @@ $app->get('/usertypes', function (Request $request, Response $response, $args) {
 
         return $response->withHeader('Content-Type', 'application/json')->withStatus(401);
     
+    } else {
+        // Error 500 ya que seria un error en servidor. No deberia de Pasar
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
+        
     }
     
 });
@@ -461,6 +517,10 @@ $app->post('/usertype/create', function (Request $request, Response $response, $
         return $response->withHeader('Content-Type', 'application/json')->withStatus(200);
     } else {
         return $response->withHeader('Content-Type', 'application/json')->withStatus(401);
+    } else {
+        // Error 500 ya que seria un error en servidor. No deberia de Pasar
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
+        
     }
   
 });
@@ -496,6 +556,10 @@ $app->put('/update/usertype', function (Request $request, Response $response, $a
 
         return $response->withHeader('Content-Type', 'application/json')->withStatus(401);
     
+    } else {
+        // Error 500 ya que seria un error en servidor. No deberia de Pasar
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
+        
     }
   
 });
@@ -527,6 +591,10 @@ $app->post('/activate/usertype', function (Request $request, Response $response,
 
         return $response->withHeader('Content-Type', 'application/json')->withStatus(401);
     
+    } else {
+        // Error 500 ya que seria un error en servidor. No deberia de Pasar
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
+        
     }
 
 });
@@ -559,6 +627,10 @@ $app->post('/deactivate/usertype', function (Request $request, Response $respons
 
         return $response->withHeader('Content-Type', 'application/json')->withStatus(401);
     
+    } else {
+        // Error 500 ya que seria un error en servidor. No deberia de Pasar
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(500);
+        
     }
 
 });
@@ -569,5 +641,6 @@ try {
     $app->run();     
 } catch (Exception $e) {    
   // We display a error message
+  // Yo guardaria este  Catch en un Log con IP y que me notifique por Email ya que es la casuistica que se dispara cuando implementan un buscador de vulnerabilidades. OJO.
   die( json_encode(array("status" => "failed", "message" => "This action is not allowed"))); 
 }
