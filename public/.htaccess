@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteEngine on  
+RewriteCond %{ENV:REDIRECT_STATUS} !200 RewriteRule
+^api/(.*)$ api/index.php/$1
+SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
