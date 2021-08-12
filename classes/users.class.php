@@ -7,7 +7,7 @@ require_once ('jwt.class.php');
 trait EncryptPassword{
     
     public function encrypt(string $password){
-        $encrypted_password = sha1($password);
+        $encrypted_password = password_hash($password, PASSWORD_DEFAULT);
         return $encrypted_password;
     }
 
@@ -22,7 +22,7 @@ class checkIfUserExists{
         $this->email = $email;
     }
 
-    public function checkPassword(){
+    public function checkIfExists(){
 
         try {
 
@@ -70,15 +70,13 @@ class userLogin{
 
             $db = database::getInstance();
             
-            $password = $this->encrypt($this->password);
-
             $sql = "SELECT * FROM users where active='1' and email=:email";
             $stm = $db->prepare($sql);
             $stm->bindParam(':email', $this->email, PDO::PARAM_INT);
             $stm->execute();
             $result = $stm->fetch();
 
-            if($result["password"]==$password){
+            if(password_verify($this->password, $result["password"])){
                 $result_token = $this->createToken($result["id"], $result["id_user_type"],$result["email"],$result["name"],$result["lastname"]);
                 return $result_token;
             } else {
@@ -126,7 +124,7 @@ class insertUser extends checkIfUserExists{
             $db = database::getInstance();
             $password = $this->encrypt($this->password);
 
-            $check = $password = parent::checkPassword($this->email);
+            $check = $password = parent::checkIfExists($this->email);
 
             if($check=="1"){
 
@@ -203,7 +201,7 @@ class updateUser extends checkIfUserExists{
             $db = database::getInstance();
             $password = $this->encrypt($this->password);
             
-            $check = $password = parent::checkPassword($this->email);
+            $check = parent::checkIfExists($this->email);
 
             if($check=="1"){
 

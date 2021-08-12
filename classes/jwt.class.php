@@ -23,7 +23,7 @@ class TokenValidation{
         
         } else {
 
-            $data = JWT::decode($this->token, secret_key, array('HS256'));
+            $data = JWT::decode($this->token, SECRET_KEY, array('HS256'));
 
             if(!empty($data->data->id)){
 
@@ -59,21 +59,21 @@ trait TokenCreation{
         try {
 
             $token = array(
-                "iss" => issuer_claim,
-                "aud" => audience_claim,
-                "iat" => issuedat_claim,
-                "nbf" => notbefore_claim,
-                "exp" => expire_claim,
+                "iss" => ISSUER_CLAIM,
+                "aud" => AUDIENCE_CLAIM,
+                "iat" => ISSUEDAT_CLAIM,
+                "nbf" => NOTBEFORE_CLAIM,
+                "exp" => EXPIRE_CLAIM,
                 "data" => array(
                     "id" => $id,
                     "firstname" => $firstname,
                     "lastname" => $lastname,
                     "email" => $email,
                     "id_user_type" => $id_user_type,
-                    "expireAt" => expire_claim
+                    "expireAt" => EXPIRE_CLAIM
             ));
 
-            $jwt = JWT::encode($token, secret_key);
+            $jwt = JWT::encode($token, SECRET_KEY);
 
             $res = json_encode(
             array(
